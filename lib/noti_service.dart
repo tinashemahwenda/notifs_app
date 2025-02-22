@@ -17,15 +17,23 @@ class NotiService {
 
     await notificationsPlugin.initialize(initSettings);
   }
-}
 
-NotificationDetails notificationDetails() {
-  return const NotificationDetails(
-      android: AndroidNotificationDetails(
-    'daily_channel_id',
-    'Daily Notifications',
-    channelDescription: 'Daily Notification Channel',
-    importance: Importance.high,
-    priority: Priority.high,
-  ));
+  NotificationDetails notificationDetails() {
+    return const NotificationDetails(
+        android: AndroidNotificationDetails(
+      'daily_channel_id',
+      'Daily Notifications',
+      channelDescription: 'Daily Notification Channel',
+      importance: Importance.high,
+      priority: Priority.high,
+    ));
+  }
+
+  Future<void> showNotification({
+    int id = 0,
+    String? title,
+    String? body,
+  }) async {
+    return notificationsPlugin.show(id, title, body, NotificationDetails());
+  }
 }
