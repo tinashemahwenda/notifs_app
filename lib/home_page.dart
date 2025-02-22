@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notifs_app/noti_service.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -8,7 +9,12 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              NotiService().showNotification(
+                title: 'First Notification',
+                body: 'Helloworld from a notification',
+              );
+            },
             child: Text(
               'Send Notifications',
             )),
