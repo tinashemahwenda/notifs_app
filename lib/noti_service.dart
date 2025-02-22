@@ -6,4 +6,6 @@ class NotiService {
   bool _isInitialized = false;
 
   bool get isInitialized => _isInitialized;
+
+  Future<void> initNotifications() async {}
 }
