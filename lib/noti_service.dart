@@ -14,5 +14,18 @@ class NotiService {
         AndroidInitializationSettings('@mipmap/ic_launcher');
 
     const initSettings = InitializationSettings(android: initSettingsAndroid);
+
+    await notificationsPlugin.initialize(initSettings);
   }
+}
+
+NotificationDetails notificationDetails() {
+  return const NotificationDetails(
+      android: AndroidNotificationDetails(
+    'daily_channel_id',
+    'Daily Notifications',
+    channelDescription: 'Daily Notification Channel',
+    importance: Importance.high,
+    priority: Priority.high,
+  ));
 }
