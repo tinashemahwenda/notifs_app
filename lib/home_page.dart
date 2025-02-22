@@ -10,7 +10,7 @@ class HomePage extends StatelessWidget {
         child: ElevatedButton(
             onPressed: () {},
             child: Text(
-              'Helloworld',
+              'Send Notifications',
             )),
       ),
     );
