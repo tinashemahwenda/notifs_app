@@ -6,6 +6,7 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
 
   NotiService().initNotifications();
+
   runApp(DemoApp());
 }
 
