@@ -2,6 +2,15 @@ import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 class NotiService {
   final notificationsPlugin = FlutterLocalNotificationsPlugin();
+  void requestNotificationPermission() async {
+    final AndroidFlutterLocalNotificationsPlugin? androidPlugin =
+        notificationsPlugin.resolvePlatformSpecificImplementation<
+            AndroidFlutterLocalNotificationsPlugin>();
+
+    if (androidPlugin != null) {
+      await androidPlugin.requestNotificationsPermission();
+    }
+  }
 
   bool _isInitialized = false;
 
